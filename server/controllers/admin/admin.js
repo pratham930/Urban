@@ -1,6 +1,6 @@
 
 
-import AdminSingup from "../Schema/admin/singup.js";
+import AdminSingup from "../../Schema/admin/singup.js";
 // import initMB from 'messagebird';
 // const messagebird = initMB('ZUcVDMrE8WjDTdP0h22BQfXdV');
 // process.env.SECRET_KEY
@@ -13,7 +13,7 @@ import jwt from 'jsonwebtoken';
 // const client = new twilio(process.env.accountSid, process.env.authToken);
 
 
-class userController {
+class adminController {
 
 
 
@@ -78,5 +78,5 @@ class userController {
   };
 
 }
-  export default userController;
+  export default adminController;
 

@@ -1,6 +1,7 @@
 
 
-import AdminSingup from "../Schema/admin/singup.js";
+// import AdminSingup from "../../Schema/user/usersingup.js";
+import Singup from "../../Schema/user/usersingup.js";
 // import initMB from 'messagebird';
 // const messagebird = initMB('ZUcVDMrE8WjDTdP0h22BQfXdV');
 // process.env.SECRET_KEY
@@ -13,7 +14,7 @@ import jwt from 'jsonwebtoken';
 // const client = new twilio(process.env.accountSid, process.env.authToken);
 
 
-class adminController {
+class userController {
 
 
 
@@ -23,7 +24,7 @@ class adminController {
       const { phonenumber, fullname, email, password } = req.body;
 
       console.log(req.body);
-      const userLogin = await AdminSingup.findOne({ phonenumber: phonenumber });
+      const userLogin = await Singup.findOne({ phonenumber: phonenumber });
       console.log(userLogin)
       if (userLogin) {
         if (userLogin.phonenumber == phonenumber) {
@@ -33,7 +34,7 @@ class adminController {
       }
       else {
         const lol = { phonenumber, fullname, email, password }
-        const register = new AdminSingup(lol)
+        const register = new Singup(lol)
         await register.save()
         res.status(201).send({ message: "succesfull", status: "succesfull" })
       }
@@ -55,7 +56,7 @@ class adminController {
         return res.status(400).json({ error: "pls filled data" })
       }
 
-      const userLogin = await AdminSingup.findOne({ phonenumber: phonenumber });
+      const userLogin = await Singup.findOne({ phonenumber: phonenumber });
       if (userLogin) {
 
         const isMatch = await bcrypt.compare(password, userLogin.password)
@@ -78,5 +79,5 @@ class adminController {
   };
 
 }
-  export default adminController;
+  export default userController;
 

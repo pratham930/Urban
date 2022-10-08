@@ -1,7 +1,7 @@
 
 
 import express from "express";
-import adminController from "../controllers/admin.js";
+import adminController from "../controllers/admin/admin.js";
 import authenticate from "../middileware/adminAuthenticate.js";
 
 
