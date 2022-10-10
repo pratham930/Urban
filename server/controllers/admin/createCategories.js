@@ -1,5 +1,5 @@
 import slugify from "slugify";
-import Categoryschema from "../../Schema/admin/category.js"
+import Categoryschema from "../../Schema/admin/category.js";
 
 
 
@@ -69,11 +69,5 @@ class categoryController {
             if (category) return res.status(200).json({category,"status": "success"})
                 
  })}
-
-
-
-
-
-
-    }
+ }
     export default categoryController ;

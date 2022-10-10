@@ -1,8 +1,8 @@
 
 
-import jwt from 'jsonwebtoken'
-// import Singup from '../Schema/Singup.js'
-import AdminSingup from '../Schema/admin/singup.js'
+import jwt from 'jsonwebtoken';
+// import Singup from '../Schema/Singup.js';
+import AdminSingup from '../Schema/admin/singup.js';
 
 var authenticate = async (req, res, next) => {
     let token

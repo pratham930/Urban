@@ -8,7 +8,8 @@ import authenticate from "../middileware/adminAuthenticate.js";
 
 const router = express.Router();
 
-// router.get('/getjobRole', adminController.getjobRole);
+
+
 router.post('/admin/register', adminController.register);
 router.post('/admin/login', adminController.login);
 
@@ -30,6 +31,7 @@ router.post('/admin/login', adminController.login);
 // router.get('/getUnderReviewjobs', authenticate, adminController.getUnderReviewjobs);
 // router.get('/getActivejobs', authenticate, adminController.getActivejobs);
 // router.get('/getExpiredjobs', authenticate, adminController.getExpiredjobs);
+
 
 
 
