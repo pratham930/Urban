@@ -3,7 +3,11 @@
 import express from "express";
 import adminController from "../controllers/admin/admin.js";
 import authenticate from "../middileware/adminAuthenticate.js";
+import upload from "../middileware/upload.js";
 
+// router.use( '/products',upload.fields([{name:'pimage',maxcount:1},{name:'rdoc',maxcount:1}]));
+// // router.use( '/productSub',upload.fields([{name:'pimage',maxcount:1},{name:'rdoc',maxcount:1}]));
+// router.use( '/postproducts',upload.fields([{name:'pimage',maxcount:1},{name:'rdoc',maxcount:1}]));
 
 
 const router = express.Router();
