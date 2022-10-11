@@ -49,6 +49,27 @@ class categoryController {
         })
     }
 
+
+    static getSubcategorybyname = async (req, res) => {
+
+      try {   
+        const {_id} = req.params;
+        const data = await Categoryschema.findOne({_id})
+
+if (data) {
+
+  const subnewdata = await Categoryschema.find({parentId:data._id})
+  res.send(subnewdata);
+ 
+}} catch (error) {
+        
+        console.log("error" + error.message);
+
+
+      }}
+
+
+
     static createCategory = (req, res) => {
 
         const {name,parentId} = req.body;
