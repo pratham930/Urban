@@ -12,6 +12,9 @@ const router = express.Router();
 
 router.post('/admin/register', adminController.register);
 router.post('/admin/login', adminController.login);
+router.post('/enqury', adminController.enqury);
+
+
 
 // //patch
 // router.patch('/admin/Activatejob/:_id', authenticate, adminController.Activatejob);

@@ -5,9 +5,10 @@ import AdminSingup from "../../Schema/admin/singup.js";
 // const messagebird = initMB('ZUcVDMrE8WjDTdP0h22BQfXdV');
 // process.env.SECRET_KEY
 import bcrypt from "bcryptjs";
-
+import Qury from "../../Schema/admin/query.js"
 // import authenticate from "../middleware/authenticate.js";
 import jwt from 'jsonwebtoken';
+import { Query } from "mongoose";
 // import { Country, State, City } from 'country-state-city';
 // import  twilio from 'twilio';
 // const client = new twilio(process.env.accountSid, process.env.authToken);
@@ -43,6 +44,36 @@ class adminController {
       return res.status(422).json({ error: "not found data" })
     }
   }
+
+
+
+  static enqury = async (req, res) => {
+
+    try {
+      const { phonenumber, fullname } = req.body;
+
+      console.log(req.body);
+      // const userLogin = await Qury.findOne({ phonenumber: phonenumber });
+      // console.log(userLogin)
+      // if (userLogin) {
+      //   if (userLogin.phonenumber == phonenumber) {
+      //     console.log(userLogin)
+      //     res.status(201).send({ message: "number already register", status: "failed" })
+      //   }
+      // }
+      
+        const inquiry = new Query(req.body)
+        await inquiry.save()
+        res.status(201).send({ message: "succesfull", status: "succesfull" })
+   
+    }
+    catch (error) {
+      console.log(error)
+      return res.status(422).json({ error: "not found data" })
+    }
+  }
+
+
 
 
 
