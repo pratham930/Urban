@@ -11,7 +11,7 @@ import adminRoute from "./routes/admin.js";
 import categoryRout from "./routes/category.js"
 
 dotenv.config({ path: './config.env' })
-const port = process.env.PORT || '5000';
+const port = process.env.PORT || '5001';
 // const DATABASE_URL = "mongodb://103.190.242.94:27017"
 const DATABASE_URL = "mongodb+srv://pratham:lookman17@cluster1.vuxzs.mongodb.net/?retryWrites=true&w=majority"
 // mongodb+srv://pratham:lookman17@cluster1.vuxzs.mongodb.net/?retryWrites=true&w=majority
